@@ -26,13 +26,16 @@ sigma = zeros(1, size(X, 2));
 % Hint: You might find the 'mean' and 'std' functions useful.
 %       
 
+XNormalized = X_norm;
+m = size(XNormalized, 1);
 
+mu = mean(XNormalized);
+muMatrix = ones(m, 1) * mu;
 
+standardDeviation = std(XNormalized);
+stdMatrix = ones(m, 1) * standardDeviation;
 
-
-
-
-
+X_norm = ( XNormalized - muMatrix ) ./ stdMatrix;
 
 % ============================================================
 
